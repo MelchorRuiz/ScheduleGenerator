@@ -33,7 +33,7 @@ function App() {
     const formData = new FormData();
     formData.append('file', file);
 
-    const response = await fetch('http://localhost:3000/convert', {
+    const response = await fetch('https://schedulegenerator-server.onrender.com/convert', {
       method: 'POST',
       body: formData
     });
@@ -61,7 +61,12 @@ function App() {
                 </div>
               ))
             }
-            <button className='absolute bottom-5 right-5 bg-amber-300 text-black p-3 rounded-lg font-semibold'>Nuevo Documento!!</button>
+            <button 
+              className='absolute bottom-5 right-5 bg-amber-300 text-black p-3 rounded-lg font-semibold'
+              onClick={() => setData(null)}
+            >
+              Nuevo Documento!!
+            </button>
           </div>
           ) : (
           <div className='flex justify-center items-center h-full'>
